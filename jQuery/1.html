@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+  <title>W3SCHOOLS JQUERY</title>
+</head>
+<body>
+  <fieldset>
+    <legend>test1</legend>
+    <p id="p1">paragraph</p>
+    <button id="btn1">Click to hide() the paragraph</button>
+  </fieldset>
+
+  <fieldset>
+    <legend>test2</legend>
+    <button id="btn2">mouseenter</button>
+  </fieldset>
+
+  <fieldset>
+    <legend>test3</legend>
+    <button id="btn3">press</button>
+  </fieldset>
+
+  <fieldset>
+    <legend>test4</legend>
+    <input type="text" id="input" placeholder="type">
+  </fieldset>
+
+  <fieldset>
+    <legend>test5</legend>
+    <p id="p2"> .on() mouseenter / mouseleave / click</p>
+  </fieldset>
+
+  <fieldset >
+    <legend>test6</legend>
+
+    <p id="hideshow">text</p>
+    <button id="hide">hide</button>
+    <button id="show">show</button>
+  </fieldset>
+
+  <fieldset >
+    <legend>test7</legend>
+
+    <p id="toggle1">text1</p>
+    <p id="toggle2">text2</p>
+    <button id="toggle">toggle</button>
+  </fieldset>
+
+  <fieldset >
+    <legend>test8</legend>
+    <button id="fadeIn">fadeIn</button>
+    <button id="fadeOut">fadeOut</button>
+    <button id="fadeToggle">fadeToggle</button>
+
+    <div id="div1" style="width: 30px; height: 30px;background-color: aqua;margin-top: 3px; display: none;"></div>
+    <div id="div2" style="width: 30px; height: 30px;background-color: red;margin-top: 3px;display: none"></div>
+    <div id="div3" style="width: 30px; height: 30px;background-color: green;margin-top: 3px;display: none"></div>
+
+
+    
+  </fieldset>
+
+  <script>
+$(document).ready(function(){ //after all HTML documents are loaded
+
+  
+  $("#btn1").click(function(){
+    $("#p1").hide();
+  });
+
+  $("#btn2").mouseenter(function(){
+    alert('You entered *btn2*');
+  });
+
+  $("#btn3").mouseup(function(){
+    alert('pressed');
+  });
+
+  $("#input").focus(function(){
+    $(this).css("background-color","#342321")
+  });
+  $("#input").blur(function(){
+    $(this).css("background-color","#ffffff")
+  });
+
+  $("#p2").on({
+  mouseenter: function(){
+    $(this).css("background-color", "lightgray");
+  },
+  mouseleave: function(){
+    $(this).css("background-color", "lightblue");
+  },
+  click: function(){
+    $(this).css("background-color", "yellow");
+  }
+});
+
+  $("#hide").click(function(){
+    $("#hideshow").hide(500);
+  })
+  $("#show").click(function(){
+    $("#hideshow").show(500);
+  })
+
+  $("#toggle").click(function(){
+    $("#toggle1").toggle(300);
+    $("#toggle2").toggle(300);
+  })
+
+  $("#fadeIn").click(function(){
+    $("#div1").fadeIn(300);
+    $("#div2").fadeIn(600);
+    $("#div3").fadeIn(900);
+  })
+
+  $("#fadeOut").click(function(){
+    $("#div1").fadeOut(900);
+    $("#div2").fadeOut(600);
+    $("#div3").fadeOut(300);
+  })
+
+  $("#fadeToggle").click(function(){
+    $("#div1").fadeToggle(600);
+    $("#div2").fadeToggle(600);
+    $("#div3").fadeToggle(600);
+  })
+
+
+});
+
+
+  </script>
+  
+</body>
+</html>
