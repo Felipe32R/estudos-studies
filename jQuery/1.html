@@ -110,6 +110,16 @@
       <div id="panel" style="padding: 50px; display: none; background-color: bisque;">aaa</div>
     </fieldset>
 
+    <fieldset>
+      <legend>test10</legend>
+      <button id="animate1">click</button>
+      <div
+        id="animateBox"
+        style="background:#98bf21;height:100px;width:100px;position:absolute;"
+      >
+      </div>
+    </fieldset>
+
     <script>
       $(document).ready(function () {
         //after all HTML documents are loaded
@@ -178,6 +188,23 @@
         $('#slideToggle').click(function () {
           $("#panel").slideToggle(300);
         });
+
+        $("#animate1").click(function(){
+        $("#animateBox").animate({
+          left: '250px',
+          height: '+=150px',
+          width: '+=150px'
+        });
+        }); 
+
+        $("#animate1").click(function(){
+        $("#animateBox").animate({
+          left: '250px',
+          height: '+=150px',
+          width: '+=150px'
+        });
+        }); 
+
       });
     </script>
   </body>
