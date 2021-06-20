@@ -110,13 +110,36 @@
       <div id="panel" style="padding: 50px; display: none; background-color: bisque;">aaa</div>
     </fieldset>
 
-    <fieldset>
+    <fieldset style="height: 300px;">
       <legend>test10</legend>
-      <button id="animate1">click</button>
+      <button id="animateMore">+</button>
+      <button id="animateLess">-</button>
       <div
         id="animateBox"
-        style="background:#98bf21;height:100px;width:100px;position:absolute;"
+        style="background:#98bf21;height:100px;width:100px;position:absolute;
+        max-width: 250px; max-height: 250px; min-height: 100px; min-width: 100px"
       >
+      </div>
+    </fieldset>
+
+    <fieldset style=" height: 270px;">
+      <legend>test11</legend>
+      <button id="animate2">click</button>
+      <div
+        id="animateQueue"
+        style="background:#214bbf;height:100px;width:100px;position:absolute;"
+      >
+      </div>
+    </fieldset>
+
+    <fieldset style=" height: 270px;">
+      <legend>test11</legend>
+      <button id="animate3">click</button>
+      <div
+        id="animateText"
+        style="background:#bf213b;height:100px;width:200px;position:absolute;"
+      >
+      Hello
       </div>
     </fieldset>
 
@@ -189,23 +212,37 @@
           $("#panel").slideToggle(300);
         });
 
-        $("#animate1").click(function(){
+        $("#animateMore").click(function(){
         $("#animateBox").animate({
           left: '250px',
-          height: '+=150px',
-          width: '+=150px'
+          height: '+=50px',
+          width: '+=50px'
         });
         }); 
 
-        $("#animate1").click(function(){
+        $("#animateLess").click(function(){
         $("#animateBox").animate({
-          left: '250px',
-          height: '+=150px',
-          width: '+=150px'
+          left: '24px',
+          height: '-=50px',
+          width: '-=50px'
         });
         }); 
 
-      });
+        $("#animate2").click(function(){
+        var div = $("#animateQueue");
+        div.animate({height: '200px', opacity: '0.4'}, "slow");
+        div.animate({width: '200px', opacity: '0.8'}, "slow");
+        div.animate({height: '100px', opacity: '0.4'}, "slow");
+        div.animate({width: '100px', opacity: '1'}, "slow");
+        });
+
+        $("#animate3").click(function(){
+        var div = $("#animateText");  
+        div.animate({left: '100px'}, "slow");
+        div.animate({fontSize: '3em'}, "slow");
+        });
+
+    });
     </script>
   </body>
 </html>
