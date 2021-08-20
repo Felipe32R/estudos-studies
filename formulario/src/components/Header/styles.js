@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
-export default Container = styled.div`
-
+export const Container = styled.div`
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 5rem;
 `;

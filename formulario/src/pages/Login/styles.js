@@ -9,5 +9,6 @@ export const Container = styled.div`
   margin: 0 auto;
   padding: 0 16px;
   justify-content: center;
-  ;
+  flex-direction: column;
+
 `;
