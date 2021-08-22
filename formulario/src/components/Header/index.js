@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types';
 import { Container } from './styles';
 
-export default function Header({ children }) {
+export default function Header({ title }) {
   return (
     <Container>
-      {children}
+      <h1>{title}</h1>
     </Container>
   );
 }
 
 Header.propTypes = {
-  children: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
 };
