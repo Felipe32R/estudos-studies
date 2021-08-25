@@ -1,10 +1,11 @@
 import HomeHeader from '../../components/HomeHeader';
+import Input from '../../components/Input';
 
-export default function Home() {
+export default function AddPerson() {
   return (
     <>
       <HomeHeader />
-      <div>aaa</div>
+      <Input />
     </>
   );
 }

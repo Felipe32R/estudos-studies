@@ -3,7 +3,7 @@ import FormGroup from '../FormGroup';
 import Input from '../Input';
 import Button from '../Button';
 
-export function ContactForm() {
+export function LoginForm() {
   return (
     <Form>
       <FormGroup>

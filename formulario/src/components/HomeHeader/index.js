@@ -5,14 +5,12 @@ import { Container, Nav } from './styles';
 export default function HomeHeader() {
   return (
     <Container>
-      <Header title="Home" />
-
+      <Header title="<Logo>" />
       <Nav>
         <Link to="/home">Home</Link>
         <Link to="/list">Lista</Link>
         <Link to="/add">Adicionar</Link>
       </Nav>
-
     </Container>
   );
 }
