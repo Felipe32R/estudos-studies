@@ -54,6 +54,22 @@
 
 
 .menu a:hover{
-  background: #be8944;;
+  background: #be8944;
   color: white;
+}
+
+.container{
+  height: 100vh;
+  border-bottom: 1px solid red;
+}
+
+form{
+  background: #be8944;
+  height: 300px;
+  width: 200px;
+}
+
+footer{
+  height: 80px;
+  background: gray;
 }
