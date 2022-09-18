@@ -9,11 +9,11 @@
   </head>
   <body>
     <header>
-      <title>Padaria do ???</title>
-      <div>
-        <a href="#c1">C1</a>
-        <a href="#c2">C2</a>
-        <a href="#c3">C3</a>
+      <h1>Padaria do Gilson</h1>
+      <div class="carrinhoContainer">
+        <a href="#">Carrinho</a>
+        <a href="#">Login</a>
+        <a href="#">Cadastro</a>
       </div>
     </header>
     <nav class="menu">
@@ -37,29 +37,50 @@
         <li><a href="#">Contato</a></li>
       </ul>
     </nav>
-    <div class="container" id="c1"></div>
-    <div class="container" id="c2"></div>
+    <div class="container" id="c1">
+      <div class="title">
+        <h2>Quem somos nós</h2>
+      </div>
+    </div>
+    <div class="container" id="c2">
+      <div class="title">
+        <h2>Produtos</h2>
+      </div>
+    </div>
     <div class="container" id="c3">
-      <form onsubmit="handleSubmit()">
+      <div class="title">
+        <h2>Entre em contato</h2>
+      </div>
+      <form id="form">
         <label for="nome">Nome</label>
-        <input type="text" id="nome" name="nome" />
+        <input type="text" id="nome" name="nome" placeholder="Nome" />
+
         <label for="telefone">Telefone</label>
-        <input type="text" id="telefone" name="telefone" />
+        <input
+          type="text"
+          id="telefone"
+          name="telefone"
+          placeholder="Telefone (Inclua o DDD)"
+        />
+
         <label for="email">Email</label>
+        <input type="text" id="email" name="email" placeholder="Email" />
 
-        <input type="text" id="email" name="email" />
         <label for="cpf">CPF</label>
-
         <input
           type="text"
           id="cpf"
           name="cpf"
-          onblur="handleCpfChange(event)"
+          maxlength="11"
+          placeholder="CPF (Apenas números)"
         />
-        <button type="submit">Enviar</button>
+
+        <div class="submitButtonContainer">
+          <button type="submit">Enviar</button>
+        </div>
       </form>
     </div>
     <footer></footer>
-    <script src="./masks.js"></script>
+    <script src="masks.js"></script>
   </body>
 </html>
