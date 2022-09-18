@@ -64,9 +64,17 @@
 }
 
 form{
+  padding: 10px;
   background: #be8944;
+  border-radius: 15px;
   height: 300px;
-  width: 200px;
+  width: 400px;
+}
+form input {
+  width: 100%;
+}
+form button {
+  margin-top: 10px;
 }
 
 footer{
