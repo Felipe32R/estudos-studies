@@ -16,29 +16,41 @@ export default function App() {
   // useFonts({
   //   GenerealSans400: require("./src/assets/fonts/GenerealSans-Regular.otf"),
   // });
-  const [pokemons, setPokemons] = useState([]);
+  const [pokemons, setPokemons] = useState({});
+  const [pokemon10, setPokemon10] = useState({});
 
-  function getPokemons() {
-    var endpoints = [];
-    for (var i = 1; i++; i < 50) {
+  async function getPokemons() {
+    /*const endpoints = [];
+    for (let i = 1; i++; i < 50) {
       endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}`);
     }
-    var response = axios
+    const response = await axios
       .all(endpoints.map((endpoint) => axios.get(endpoint)))
-      .then((res: any) => console.log(res));
-    // api.get("/pokemon").then((response) => setPokemons(response.data));
+      .then((res: any) => {
+        setPokemons(res);
+        console.log(res);
+      });*/
+    api.get("pokemon").then((res: any) => setPokemons(res?.data));
+    api.get("pokemon/10").then((res: any) => setPokemon10(res?.data));
   }
 
   useEffect(() => {
     getPokemons();
   }, []);
 
-  console.log("pokemons", pokemons);
+  useEffect(() => {}, [pokemon10]);
+  // api.get("/pokemon").then((response) => setPokemons(response.data));
+  console.log("pokemons", pokemons?.results, pokemon10?.sprites?.front_default);
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Pokémon List</Text>
 
       <ScrollView style={styles.scrollView}>
+        <Image
+          source={{
+            uri: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+          }}
+        />
         {!pokemons ? (
           <Text>Carregando lista..</Text>
         ) : (
@@ -47,12 +59,14 @@ export default function App() {
             data={pokemons?.results}
             renderItem={({ item }) => (
               <Text style={styles.list}>{item.key}</Text>
+              <Image source={{ uri: pokemon.data.sprites.front_default }} />
             )}
-          /> */}
-            {pokemons?.map((pokemon: any) => (
-              <View>
-                <Text> {pokemon.data.name}</Text>
-                <Image source={{ uri: pokemon.data.sprites.front_default }} />
+          />*/}
+
+            {pokemons?.results?.map((pokemon: any) => (
+              <View style={styles.card} key={pokemon.name}>
+                <Text> {pokemon.name}</Text>
+                {/* <Image source={{ uri: pokemon10.sprites.front_default }} />*/}
               </View>
             ))}
 
@@ -84,6 +98,11 @@ const styles = StyleSheet.create({
   tinyLogo: {
     width: 50,
     height: 50,
+  },
+  card: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
   },
   scrollView: {
     backgroundColor: "#ff9900",
