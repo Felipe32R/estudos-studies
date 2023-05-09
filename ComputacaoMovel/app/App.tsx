@@ -47,8 +47,10 @@ export default function App() {
 
       <ScrollView style={styles.scrollView}>
         <Image
+           style = {{ width: 200, height: 200 }}
+           resizeMode="contain"
           source={{
-            uri: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+            uri: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png"
           }}
         />
         {!pokemons ? (
@@ -66,7 +68,7 @@ export default function App() {
             {pokemons?.results?.map((pokemon: any) => (
               <View style={styles.card} key={pokemon.name}>
                 <Text> {pokemon.name}</Text>
-                {/* <Image source={{ uri: pokemon10.sprites.front_default }} />*/}
+                {/* <Image style = {{ width: 50, height: 50 }} >*/}
               </View>
             ))}
 
